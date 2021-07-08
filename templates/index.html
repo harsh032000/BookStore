@@ -1,0 +1,67 @@
+<style>A {text-decoration: none;} </style>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card text-center shadow-lg">
+    <h3>Welcome to Book Store.</h3>
+</div>
+
+<br>
+<div class="text-center shadow-lg">
+    This Application is made by Harsh Agarwal and you can view available books in the store and add the books in the
+    list
+</div>
+
+<div class="row align-items-stretch g-4 py-5 shadow-lg">
+    <div class="col">
+        <div class="card text-center text-black text-white bg-dark shadow-lg" id="total-books">
+            <div class="card-header">
+                <h5 class="card-title">Total Books Available</h5>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{total}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container px-4 py-5 shadow-lg" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Available Services</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+
+        <a style="text-decoration:none" href="/products">
+            <div class="col">
+                <div style="background: url('/static/images/books.jfif')" class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Check all Books available</h2>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a style="text-decoration:none" href="/addbook">
+            <div class="col">
+                <div style="background: url('/static/images/booksdb.jfif')" class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Add a Book to Database</h2>
+
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a style="text-decoration:none" href="/admin">
+            <div class="col">
+                <div style="background: url('/static/images/adminpic.jfif')" class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="background-image: url('unsplash-photo-3.jpg');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Admin Login</h2>
+
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

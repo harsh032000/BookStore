@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+
+<div class="card card-body shadow-lg">
+    <h5>Books available</h5>
+</div>
+<br>
+<div class="row shadow-lg">
+    <div class="col">
+        <div class="card card-body">
+            <form method="get">
+                {% csrf_token %}
+                {{myFilter.form}}
+                <button class="btn btn-primary" type="submit">
+                    Search
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="card card-body shadow-lg">
+    <table class="table shadow-lg">
+        <tr class="shadow-lg">
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Language</th>
+        </tr>
+
+        {% for i in books %}
+        <tr class="shadow-lg">
+            <td>{{i.name}}</td>
+            <td>{{i.author}}</td>
+            <td>{{i.genre}}</td>
+            <td>{{i.language}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+
+{% endblock %}

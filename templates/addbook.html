@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card text-center text-blue text-black bg-white shadow-lg">
+<h2>Add Books</h2>
+</div>
+
+<div class="row align-items-stretch g-4 py-5 shadow-lg">
+    <div class="col">
+        <div class="card text-center text-black text-white bg-dark shadow-lg" id="total-books">
+            <div class="card-header">
+                <h5 class="card-title">Total Books</h5>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{total}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col py-4 shadow-lg">
+<div class="center-column">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" name="Submit">
+    </form>
+</div>
+</div>
+{% endblock %}
